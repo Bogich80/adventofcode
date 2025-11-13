@@ -4,7 +4,6 @@ import hu.bogich.adventofcode.Year2015.Service.FileService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
@@ -16,17 +15,20 @@ public class Day1 implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+        String content;
         try {
-            log.info("The instructions take Santa to floor {}.", String.valueOf(getFloor(inputFile)));
-            log.info("Character position {} causes Santa to first enter the basement.", String.valueOf(getBasementPosition(inputFile)));
+            content = fileService.readFileByLine(inputFile);
+
         } catch (IOException e) {
             log.error(e.getMessage());
+            return;
         }
+        log.info("The instructions take Santa to floor {}.", getFloor(content));
+        log.info("Character position {} causes Santa to first enter the basement.", getBasementPosition(content));
     }
 
-    private int getFloor(String fileName) throws IOException {
+    private int getFloor(String content) {
         int floor = 0;
-        String content = this.fileService.readFileByLine(fileName);
         for (int i = 0; i < content.length(); i++) {
             if (content.charAt(i) == '(') {
                 floor++;
@@ -37,10 +39,8 @@ public class Day1 implements CommandLineRunner {
         return floor;
     }
 
-    private int getBasementPosition(String fileName) throws IOException {
+    private int getBasementPosition(String content) {
         int floor = 0;
-        int pos = 1;
-        String content = this.fileService.readFileByLine(fileName);
         for (int i = 0; i < content.length(); i++) {
             if (content.charAt(i) == '(') {
                 floor++;
@@ -48,9 +48,8 @@ public class Day1 implements CommandLineRunner {
                 floor--;
             }
             if (floor == -1) {
-                return pos;
+                return i + 1;
             }
-            pos++;
         }
         return -1;
     }

@@ -11,7 +11,6 @@ import java.util.Arrays;
 
 @Slf4j
 @AllArgsConstructor
-@Component
 public class Day2 implements CommandLineRunner {
     final FileService fileService;
     final String inputFile = "src/main/resources/2015_input2.txt";
@@ -19,7 +18,7 @@ public class Day2 implements CommandLineRunner {
     @Override
     public void run(String... args) {
         try {
-            log.info("They should order " + String.valueOf(calcTotalPapers(inputFile)) + " square feet of wrapping paper.");
+            log.info("They should order {} square feet of wrapping paper.", calcTotalPapers(inputFile));
         } catch (IOException e) {
             log.error(e.getMessage());
         }

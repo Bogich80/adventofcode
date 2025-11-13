@@ -29,7 +29,7 @@ public class Day4 implements CommandLineRunner {
         int additionalNumber = 0;
         while (true) {
             if (sb != null) {
-                if (sb.substring(0, 5).equals("00000")) break;
+                if (sb.substring(0, 6).equals("000000")) break;
             }
             additionalNumber++;
             MessageDigest md = MessageDigest.getInstance("MD5");

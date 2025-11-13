@@ -20,7 +20,7 @@ public class Day3 implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("{} houses receive at least one present.", countHouses(false));
-        log.info("{} houses receive at least one present.", countHouses(true));
+        log.info("{} houses receive at least one present if robot helps.", countHouses(true));
     }
 
     public int countHouses(Boolean withRobot) throws IOException {

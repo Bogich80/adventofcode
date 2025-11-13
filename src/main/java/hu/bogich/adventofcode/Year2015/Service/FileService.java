@@ -28,7 +28,6 @@ public class FileService {
                 sb.append((char) c);
             }
         }
-
         return sb.toString();
     }
 }

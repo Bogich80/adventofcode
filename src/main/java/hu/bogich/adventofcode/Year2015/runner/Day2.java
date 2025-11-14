@@ -13,7 +13,7 @@ import java.util.Arrays;
 @AllArgsConstructor
 public class Day2 implements CommandLineRunner {
     final FileService fileService;
-    final String inputFile = "src/main/resources/2015_input2.txt";
+    final String inputFile = "src/main/resources/2015/2015_input2.txt";
 
     @Override
     public void run(String... args) {

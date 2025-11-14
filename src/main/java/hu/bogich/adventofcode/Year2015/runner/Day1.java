@@ -11,7 +11,7 @@ import java.io.IOException;
 @AllArgsConstructor
 public class Day1 implements CommandLineRunner {
     final FileService fileService;
-    final String inputFile = "src/main/resources/input_day1.txt";
+    final String inputFile = "src/main/resources/2015/input_day1.txt";
 
     @Override
     public void run(String... args) {

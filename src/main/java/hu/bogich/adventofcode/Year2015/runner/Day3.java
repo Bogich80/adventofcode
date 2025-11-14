@@ -12,10 +12,9 @@ import java.util.Map;
 
 @Slf4j
 @AllArgsConstructor
-@Component
 public class Day3 implements CommandLineRunner {
     final FileService fileService;
-    final String inputFile = "src/main/resources/2015_input3.txt";
+    final String inputFile = "src/main/resources/2015/2015_input3.txt";
 
     @Override
     public void run(String... args) throws Exception {

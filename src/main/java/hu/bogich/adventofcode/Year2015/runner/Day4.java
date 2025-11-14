@@ -13,10 +13,9 @@ import java.util.Arrays;
 
 @Slf4j
 @AllArgsConstructor
-@Component
 public class Day4 implements CommandLineRunner {
     final FileService fileService;
-    final String inputFile = "src/main/resources/2015_input4.txt";
+    final String inputFile = "src/main/resources/2015/2015_input4.txt";
 
     @Override
     public void run(String... args) throws Exception {
